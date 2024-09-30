@@ -36,7 +36,7 @@ func TestLogger(t *testing.T) {
 		},
 	})
 
-	logger := NewLogger(WithLogger(slog.New(handler)), WithMessageKey("output"))
+	logger := NewLogger(WithLogger(slog.New(handler)))
 
 	defer func() { _ = logger.Close() }()
 	helper := log.NewHelper(logger)
