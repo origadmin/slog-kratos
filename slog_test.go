@@ -36,23 +36,23 @@ func TestLogger(t *testing.T) {
 		},
 	})
 
-	logger := NewLogger(slog.New(handler))
+	logger := NewLogger(WithLogger(slog.New(handler)), WithMessageKey("output"))
 
 	defer func() { _ = logger.Close() }()
-	zlog := log.NewHelper(logger)
-	zlog.Debugw("log", "debug")
-	zlog.Infow("log", "info")
-	zlog.Warnw("log", "warn")
-	zlog.Errorw("log", "error")
-	zlog.Errorw("log", "error", "except warn")
-	zlog.Info("hello world")
+	helper := log.NewHelper(logger)
+	helper.Debugw("output", "debug")
+	helper.Infow("output", "info")
+	helper.Warnw("output", "warn")
+	helper.Errorw("output", "error")
+	helper.Errorw("output", "error", "except warn")
+	helper.Info("hello world")
 
 	except := []string{
-		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"debug\",\"msg\":\"\",\"log\":\"debug\"}\n",
-		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"info\",\"msg\":\"\",\"log\":\"info\"}\n",
-		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"warn\",\"msg\":\"\",\"log\":\"warn\"}\n",
-		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"error\",\"msg\":\"\",\"log\":\"error\"}\n",
-		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"warn\",\"msg\":\"Keyvalues must appear in pairs: [log error except warn]\"}\n",
+		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"debug\",\"msg\":\"\",\"output\":\"debug\"}\n",
+		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"info\",\"msg\":\"\",\"output\":\"info\"}\n",
+		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"warn\",\"msg\":\"\",\"output\":\"warn\"}\n",
+		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"error\",\"msg\":\"\",\"output\":\"error\"}\n",
+		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"warn\",\"msg\":\"Key and values must appear in pairs: [output error except warn]\"}\n",
 		"{\"time\":\"2023-01-01 00:00:00\",\"level\":\"info\",\"msg\":\"hello world\"}\n", // not {"level":"info","msg":"","msg":"hello world"}
 	}
 	for i, s := range except {
