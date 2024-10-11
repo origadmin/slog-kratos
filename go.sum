@@ -1,6 +1,6 @@
 github.com/go-kratos/kratos/v2 v2.8.0 h1:qr27WRTRrI3o4jzJzNKf4XVVoMYIqnQD+4ws1C46yhM=
 github.com/go-kratos/kratos/v2 v2.8.0/go.mod h1:+Vfe3FzF0d+BfMdajA11jT0rAyJWublRE/seZQNZVxE=
-github.com/goexts/ggb v0.0.7 h1:bQsgG0gfQl+/MDuURFpdKrIlN4Pna1dn7rsDhc7143I=
-github.com/goexts/ggb v0.0.7/go.mod h1:72flV6VMM6xa1HMRHQKPvux6LNVrG50bqtoIa0ER6QQ=
+github.com/goexts/ggb v0.0.9 h1:eeDYkPTmxY0pQADKPzVvX0ggI4wj0Ak69eaSM3WOzJ0=
+github.com/goexts/ggb v0.0.9/go.mod h1:iBsK4UK/IccpiOqPEt6EWNex8MWTIdKmS9HhnNRY8ZE=
 golang.org/x/sync v0.5.0 h1:60k92dhOjHxJkrqnwsfl8KuaHbn/5dl0lUPUklKo3qE=
 golang.org/x/sync v0.5.0/go.mod h1:Czt+wKu1gCyEFDUtn0jG5QVvpJ6rzVqr5aXyt9drQfk=

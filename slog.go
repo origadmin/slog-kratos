@@ -24,7 +24,7 @@ type Logger struct {
 }
 
 // Option is a function that configures a Logger instance.
-type Option = settings.Setting[Logger]
+type Option = func(log *Logger)
 
 // WithContext returns an Option that sets the context for the logger.
 func WithContext(ctx context.Context) Option {
