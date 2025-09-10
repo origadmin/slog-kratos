@@ -46,19 +46,22 @@ jobs:
       - name: Run tests
         run: make test
 
-      - name: Run Release
+  release:
+    # The release job depends on the test job succeeding.
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release and Changelog
+        # This action automates the entire release process based on
+        # Conventional Commit messages.
         uses: googleapis/release-please-action@v4
-        id: release # Assign an ID to access outputs
         with:
-          release-type: go # Specify release type for Go projects
-          # Removed: package-name: slog-kratos # This input is not valid for single-package repos
-          # Optional: target-branch: main # If your main branch is not 'main'
-          # Optional: changelog-path: CHANGELOG.md # If you want a specific changelog path
-          # Optional: bump-minor-pre-major: true # If you want minor bumps before major version (e.g., 0.x.x -> 0.y.0)
-          # Optional: command: release-pr # To only create release PRs, not direct releases
-          # Optional: extra-files: | # If you have other files that need version bumping
-          #   version.go
-          #   config/version.json
+          # The release-type for a standard Go module.
+          # It automatically finds the go.mod file, reads the module path,
+          # and creates tags like `v1.2.3`.
+          release-type: go
+          # The token is required for release-please to create releases.
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Optional: If you want to do something after a release is created (e.g., notify Slack)
       - name: Notify on new release
