@@ -1,31 +1,21 @@
-Thanks for helping make GitHub safe for everyone.
+# Security Policy
 
-## Security
+## Supported Versions
 
-GitHub takes the security of our software products and services seriously, including all of the open source code repositories managed through our GitHub organizations, such as [GitHub](https://github.com/GitHub).
+Use this section to tell people about which versions of your project are
+currently being supported with security updates.
 
-Even though [open source repositories are outside of the scope of our bug bounty program](https://bounty.github.com/index.html#scope) and therefore not eligible for bounty rewards, we will ensure that your finding gets passed along to the appropriate maintainers for remediation.
+| Version | Supported          |
+| ------- | ------------------ |
+| 1.x.x   | :white_check_mark: |
+| < 1.0   | :x:                |
 
-## Reporting Security Issues
+## Reporting a Vulnerability
 
-If you believe you have found a security vulnerability in any GitHub-owned repository, please report it to us through coordinated disclosure.
+We take all security bugs in our projects seriously. Thank you for improving the security of our software. We appreciate your efforts and responsible disclosure and will make every effort to acknowledge your contributions.
 
-**Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
+To report a security vulnerability, please email us at [maintainer@example.com](mailto:maintainer@example.com) with a detailed description of the vulnerability and steps to reproduce it.
 
-Instead, please send an email to opensource-security[@]github.com.
+Please do not report security vulnerabilities through public GitHub issues.
 
-Please include as much of the information listed below as you can to help us better understand and resolve the issue:
-
-* The type of issue (e.g., buffer overflow, SQL injection, or cross-site scripting)
-* Full paths of source file(s) related to the manifestation of the issue
-* The location of the affected source code (tag/branch/commit or direct URL)
-* Any special configuration required to reproduce the issue
-* Step-by-step instructions to reproduce the issue
-* Proof-of-concept or exploit code (if possible)
-* Impact of the issue, including how an attacker might exploit the issue
-
-This information will help us triage your report more quickly.
-
-## Policy
-
-See [GitHub's Safe Harbor Policy](https://docs.github.com/en/site-policy/security-policies/github-bug-bounty-program-legal-safe-harbor)
+You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. All security breaches will be handled with the utmost urgency.
