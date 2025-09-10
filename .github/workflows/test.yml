@@ -54,14 +54,21 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.23'
+        go-version: '1.23' # Use Go 1.23 as specified in go.mod
         check-latest: true
 
+    - name: Go mod tidy
+      run: go mod tidy
+
+    - name: Go mod download
+      run: go mod download
+
+    - name: Install golangci-lint
+      run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.59.0 # Install directly
+
     - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v3
-      with:
-        version: v1.56.1
-        args: --timeout 10m
+      run: | # Run directly
+        ~/go/bin/golangci-lint run --timeout 10m ./...
 
   staticcheck:
     name: Static Analysis

@@ -25,7 +25,7 @@ func TestLogger(t *testing.T) {
 	syncer := &testWriteSyncer{}
 	handler := slog.NewJSONHandler(syncer, &slog.HandlerOptions{
 		Level: slog.LevelDebug,
-		ReplaceAttr: func(groups []string, a slog.Attr) slog.Attr {
+		ReplaceAttr: func(_ []string, a slog.Attr) slog.Attr {
 			if a.Key == "time" {
 				return slog.String("time", "2023-01-01 00:00:00")
 			}

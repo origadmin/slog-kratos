@@ -23,10 +23,6 @@ query-filters:
 queries:
   - uses: security-extended
   - uses: security-and-quality
-    exclude:
-      # Exclude specific queries with high false positive rates
-      - "go/incorrect-integer-conversion"
-      - "go/unsafe-ptr-arithmetic"
 
 paths-ignore:
   - "**/testdata/**"
