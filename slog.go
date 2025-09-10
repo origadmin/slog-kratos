@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/go-kratos/kratos/v2/log"
-	"github.com/goexts/generic/settings"
+	"github.com/goexts/generic/configure"
 )
 
 // Logger represents a structured logger.
@@ -51,7 +51,7 @@ func WithLogger(logger *slog.Logger) Option {
 func NewLogger(opts ...Option) *Logger {
 	// Create a new Logger instance with default values.
 	// Apply the given options to the logger.
-	logger := settings.Apply(&Logger{
+	logger := configure.Apply(&Logger{
 		ctx:    context.Background(),
 		msgKey: log.DefaultMessageKey,
 	}, opts)
