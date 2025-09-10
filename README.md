@@ -1,6 +1,6 @@
 # slog-kratos
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/origadmin/framework/tools/slog-kratos)](https://goreportcard.com/report/github.com/origadmin/framework/tools/slog-kratos) [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/origadmin/framework/tools/slog-kratos) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Report Card](https://goreportcard.com/badge/github.com/origadmin/slog-kratos)](https://goreportcard.com/report/github.com/origadmin/slog-kratos) [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/origadmin/slog-kratos) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A simple and efficient adapter to use Go's standard structured logging library (`slog`) as a logger within the [Kratos](https://github.com/go-kratos/kratos) framework.
 
@@ -19,7 +19,7 @@ This library implements the `log.Logger` interface from the Kratos project, allo
 To install `slog-kratos`, use `go get`:
 
 ```sh
-go get github.com/origadmin/framework/tools/slog-kratos
+go get github.com/origadmin/slog-kratos
 ```
 
 ## 💡 Usage
@@ -37,7 +37,7 @@ import (
 	"os"
 
 	kratoslog "github.com/go-kratos/kratos/v2/log"
-	slogkratos "github.com/origadmin/framework/tools/slog-kratos"
+	slogkratos "github.com/origadmin/slog-kratos"
 )
 
 func main() {
